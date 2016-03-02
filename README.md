@@ -6,6 +6,10 @@
 
 The `awesomecrudjs` takes the data in the model (the model attributes) and generate the controller, the actions in the controller (e.g. index, create, createModel, edit, show, update, and destroy), and corresponding views of a Sails project.   The `awesomecrudjs` will also create and copy the files and folders needed (e.g. bootstrap, jquery, jquery-validator). 
 
+### Requirements :
+- node.js
+- sails v0.12
+
 ### To install:
 
 **Step 1:** 
