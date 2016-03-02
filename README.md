@@ -48,6 +48,45 @@ One model:
 ```sh
 $ node crud_gen.js -m user
 ```
+###One more thing:
+Need to add the datatables css files and the corect order of the .js files in the pippeline.js file.
+
+.css
+```sh
+var cssFilesToInject = [
+  'styles/**/*.css', 
+
+  //datatables css
+  'js-plugins/dataTables/datatables.min.css',
+];
+```
+.js
+```sh
+var jsFilesToInject = [
+
+  // Load sails.io before everything else
+  'js/dependencies/sails.io.js',
+
+  // Load jquery
+  'js/dependencies/jquery-1.12.0.min.js',
+  'js/dependencies/jquery.validate.min.js',
+
+  //datatables  
+  'js-plugins/datatable/datatables.min.js',
+
+  // Dependencies like jQuery, or Angular are brought in here
+  'js/dependencies/**/*.js',
+
+  //bootstrap
+  'js/bootstrap.min.js', 
+
+  // All of the rest of your client-side js files
+  // will be injected here in no particular order.
+  'js/**/*.js'
+];
+```
+#####Note: Tested with Sails v0.12
+
 ### Features
 - [Twitter Bootstrap v3.3.6] (http://getbootstrap.com)
 - [jQuery v1.12.0](https://jquery.com/) (c) [jQuery Foundation] (https://jquery.org/license/)
