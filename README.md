@@ -1,0 +1,1 @@
+# awesomecrud-js
