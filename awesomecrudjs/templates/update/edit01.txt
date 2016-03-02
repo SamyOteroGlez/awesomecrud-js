@@ -1,0 +1,8 @@
+<div class="container">
+	<section>
+		
+		<div class="col-md-3">
+			<h3>Update class_name</h3>
+		
+			<form action="/class_name_lowercase/update/<%= class_name_lowercase.id %>" method="post" class="form-editclass_name" id="editclass_name">
+				

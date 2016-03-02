@@ -1,0 +1,6 @@
+		</br>
+		
+		<a class="btn btn-sm btn-success " href="/class_name_lowercase"> List</a>
+		<a class="btn btn-sm btn-primary" href="/class_name_lowercase/edit/<%= class_name_lowercase.id %>"> Edit</a>
+	</section>
+</div>	

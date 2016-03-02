@@ -1,0 +1,7 @@
+				<th>Actions</th>
+			</thead>
+				<tbody>
+					<% _.each(class_name_plural, function(class_name_lowercase){ %>
+					<tr> 
+						<td id="<%= class_name_lowercase.id %>"></td>
+						<td><%= class_name_lowercase.id %></td>

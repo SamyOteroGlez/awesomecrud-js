@@ -1,0 +1,8 @@
+<div class="container">
+	<section>
+		
+		<h3>Create class_name</h3>
+
+		<div class="col-md-3">
+			<form action="/class_name_lowercase/createclass_name" method="post" class="form-createclass_name" id="createclass_name">
+				

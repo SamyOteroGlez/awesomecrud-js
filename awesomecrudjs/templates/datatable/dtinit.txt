@@ -1,0 +1,93 @@
+$(document).ready(function() {
+    var table = $('#class_name_lowercase').DataTable({
+		columnDefs: [{
+			 targets: 0,
+			 searchable:false,
+			 orderable:false,
+			 className: 'dt-body-center',
+			 render: function (data, type, full, meta){
+				 var rowId = $(this).closest('td').attr('id');
+				 return '<input type="checkbox" name="id[]" value="' + rowId + '">';
+			 }
+		  }],
+        order: [[1, 'asc']], 
+		dom: '<"row breadcrumb"<"col-md-3"<"toolbar">><"col-md-9"<B>>><"row"<"col-md-2"l><"col-md-10"f>><"row"<rtip>>',
+		buttons: [
+			{
+				extend: 'colvis', 
+				text: 'Visibility', 
+			}, 
+			{
+				extend: 'copy', 
+			}, 
+			{
+				extend: 'csv', 
+			}, 
+			{
+				extend: 'excel', 
+			}, 
+			{
+				extend: 'pdf', 
+			}, 
+			{
+				extend: 'print', 
+			},
+    	],
+		initComplete: function(){
+		  $("div.toolbar").html('<div class="dt-buttons btn-group" role="group"><a class="btn btn-primary" href="/class_name_lowercase/create"><i class="glyphicon glyphicon-ok"></i> Create</a><a class="btn btn-danger disabled" id="deleteMultiple" href="#"><i class="glyphicon glyphicon-trash"></i> Delete selection</a></div>');           
+	   } 
+	});
+	   
+   $('#selectAll').on('click', function(){
+      var rows = table.rows({ 'search': 'applied' }).nodes();
+      $('input[type="checkbox"]', rows).prop('checked', this.checked);	  
+   });
+	
+   $("input[type='checkbox']").change(function() {
+        if($("input[type='checkbox']").is(":checked")){
+            $('#deleteMultiple').removeClass('disabled');
+        }else{
+            $('#deleteMultiple').addClass('disabled');
+        }
+    });	
+
+   $('#example tbody').on('change', 'input[type="checkbox"]', function(){
+	   
+      if(!this.checked){
+         var el = $('#selectAll').get(0);
+		  
+         if(el && el.checked && ('indeterminate' in el)){
+            el.indeterminate = true;
+         }
+      }
+   });
+
+	$('#deleteMultiple').click(function(values){
+        var ids = [];
+        var ck = $('#class_name_lowercase').find('input[type="checkbox"]:checked');
+		
+        if(ck.length > 0 && confirm("Are you sure you want to delete this elements?")){
+            for(i = 0; i < ck.length; i++){
+				if(ck[i].value != 'mainck'){
+					ids.push(ck[i].value);
+				}                
+			};
+			$.ajax({
+				type: "POST",
+				url: "/class_name_lowercase/test",
+				data: {
+						_csrf: $('#_csrf').val(), 
+						ids: ids, 
+					},
+					success: function(data){						
+						alert('ok');
+						window.location.href = "/class_name_lowercase";
+					},
+					error: function(jqXHR, textStatus, err){
+					  alert('text status '+textStatus+', err '+err);
+					} 
+			});
+        }
+    });
+	
+}); 

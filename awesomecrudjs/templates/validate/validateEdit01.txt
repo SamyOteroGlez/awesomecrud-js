@@ -1,0 +1,5 @@
+$(document).ready(function(){
+
+	// Validate update class_name_lowercase form
+	$('#editclass_name').validate({
+		rules: 

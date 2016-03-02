@@ -1,0 +1,12 @@
+		,
+		highlight: function(element) {
+			$(element).closest('.form-group').removeClass('has-success').addClass('has-error');
+		},
+		unhighlight: function(element) {
+			$(element).closest('.form-group').removeClass('has-error').addClass('has-success');
+		},
+		success: function(element){
+			element.parent().addClass('has-success')
+		}
+	});
+});

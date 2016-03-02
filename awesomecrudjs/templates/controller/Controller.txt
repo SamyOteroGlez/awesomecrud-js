@@ -1,0 +1,99 @@
+/**
+ * class_nameController
+ *
+ * @description :: Server-side logic for managing class_name_plural
+ * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
+ */
+
+module.exports = {
+	
+	index: function(req, res, next){
+		class_name.find(function foundUsers(err, class_name_plural){
+			if(err) {
+				console.log(err);
+				return next(err);
+			}	
+			
+			res.view({
+				class_name_plural: class_name_plural, 
+			});
+		});
+	},
+	
+	create: function(req, res){
+		res.view();
+	},
+	
+	createclass_name: function(req, res, next){
+		class_name.create(req.params.all(), function(err, class_name_lowercase){
+			if(err){
+				req.session.flash = {
+					err: err
+				}	
+				console.log(err);
+				return res.redirect('/class_name_lowercase/create');
+			}
+
+			res.redirect('/class_name_lowercase/show/' + class_name_lowercase.id);
+		});
+	}, 
+	
+	edit: function(req, res, next){
+		class_name.findOne(req.param('id'), function foundclass_name(err, class_name_lowercase){
+			if(err) {
+				console.log(err);
+				return next(err);
+			}	
+			if(!class_name_lowercase) return next('class_name doesn\'t exist!');
+			
+			res.view({
+				class_name_lowercase: class_name_lowercase
+			});
+		});
+	},
+	
+	update: function(req, res, next){
+		class_name.update(req.param('id'), req.params.all(), function class_name_lowercaseUpdate(err){
+			if(err){
+				console.log(err);
+				return res.redirect('/class_name_lowercase/edit/' + req.param('id'));
+			}
+			
+			res.redirect('/class_name_lowercase/show/' + req.param('id'));
+		});
+	}, 
+	
+	show: function(req, res, next){
+		class_name.findOne(req.param('id'), function foundclass_name(err, class_name_lowercase){
+			if(err) {
+				console.log(err);
+				return next(err);
+			}	
+			if(!class_name_lowercase) return next('class_name doesn\'t exist!');
+			
+			res.view({
+				class_name_lowercase: class_name_lowercase
+			});
+		});
+	},
+	
+	destroy: function(req, res, next, data){
+		class_name.findOne(req.param('id'), function foundclass_name(err, class_name_lowercase){
+			if(err) {
+				console.log(err);
+				return next(err);
+			}	
+			if(!class_name_lowercase) return next('class_name doesn\'t exist!');
+			
+			class_name.destroy(req. param('id'), function class_name_lowercaseDestroyed(err){
+				if(err) {
+					console.log(err);
+					return next(err);
+				}	
+			});
+			
+			res.redirect('/class_name_lowercase');
+		});
+	}, 
+	
+};

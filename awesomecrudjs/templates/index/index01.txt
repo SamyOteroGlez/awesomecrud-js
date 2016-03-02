@@ -1,0 +1,9 @@
+<div class="container">
+<section>
+	<h3>class_name</h3>
+	<hr>	
+	<div class="col-md-12">
+		<table id="class_name_lowercase" class="table table-responsive table-condensed table-hover">
+			<thead class="well">
+				<th><input type="checkbox" name="select_all" value="mainck" id="selectAll"></th>
+				<th>Id</th> 

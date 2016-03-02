@@ -1,0 +1,3 @@
+		<p><b>model_cap_attr:</b> <%= class_name_lowercase.model_attr %></p>
+		
+		

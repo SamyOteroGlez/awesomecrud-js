@@ -1,0 +1,16 @@
+					<td>
+						<div class="btn-group-xs" role="group">
+							<a class="btn btn-info" href="/class_name_lowercase/show/<%= class_name_lowercase.id %>"><i class="glyphicon glyphicon-search"></i></a>
+							<a class="btn btn-warning" href="/class_name_lowercase/edit/<%= class_name_lowercase.id %>"><i class="glyphicon glyphicon-pencil"></i></a>
+							<a class="btn btn-danger" href="/class_name_lowercase/destroy/<%= class_name_lowercase.id %>" onclick="return confirm('Are you sure?');"><i class="glyphicon glyphicon-remove"></i></a>
+						</div>
+					</td>
+				</tr>
+				<% }) %>
+			</tbody>
+		</table>
+		<input type="hidden" name="_csrf" id="_csrf" value="<%= _csrf %>" />	
+	</div>
+</section> 
+</div>
+ 

@@ -1,0 +1,7 @@
+
+				<input id="btn-submit" type="submit" class="btn btn-sm btn-primary btn-block" value="Create"/>
+				<input type="hidden" name="_csrf" value="<%= _csrf %>" />	
+			</form>
+		</div>
+	</section> 
+</div>	

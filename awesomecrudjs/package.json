@@ -1,0 +1,16 @@
+{
+  "name": "awesomecrudjs",
+  "version": "1.0.0",
+  "description": "CRUD for Sails",
+  "main": "crud_gen.js",
+  "dependencies": {
+    "fs-extra": "^0.26.5",
+    "lodash": "^4.5.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "SamyOteroGlez",
+  "license": "ISC"
+}

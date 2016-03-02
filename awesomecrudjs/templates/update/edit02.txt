@@ -1,0 +1,3 @@
+				<div class="form-group">
+					<input type="text" class="form-control" placeholder="model_attr" name="model_attr" id="model_attr" value="<%= class_name_lowercase.model_attr %>">
+				</div>

@@ -1,0 +1,5 @@
+$(document).ready(function(){
+	
+	// Validate create class_name_lowercase form
+	$('#createclass_name').validate({
+		rules: 
