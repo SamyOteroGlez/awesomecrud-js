@@ -89,6 +89,8 @@ var jsFilesToInject = [
   'js/**/*.js'
 ];
 ```
+#####In order to use the breadcrumb system click [here breadcrumb.js] (https://github.com/SamyOteroGlez/breadcrumb.js)
+
 #####Note: Tested with Sails v0.12
 
 ### Features
