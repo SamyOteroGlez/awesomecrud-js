@@ -74,7 +74,7 @@ $(document).ready(function() {
 			};
 			$.ajax({
 				type: "POST",
-				url: "/class_name_lowercase/test",
+				url: "/class_name_lowercase/destroyMultiple",
 				data: {
 						_csrf: $('#_csrf').val(), 
 						ids: ids, 
