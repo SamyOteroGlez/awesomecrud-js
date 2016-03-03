@@ -396,6 +396,10 @@ function createLibsFolders(){
 		//jquery
 		libs.fs.copy(path.jquery_folder_path, path.js_folder_path + '/dependencies', { replace: false });
 		console.log('Copy jquery and jquery.validation --> Ok.', '\n');
+		
+		//bootstrap
+		libs.fs.copy(path.bootstrap_folder_path + '/js', path.assets_folder_path + '/js', { replace: false });
+		console.log('Copy bootstrap.min.js --> Ok.');
 
 	} catch(err){
 		console.log(error.cant_create_folder);
